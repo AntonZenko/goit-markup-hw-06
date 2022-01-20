@@ -455,14 +455,14 @@
           </svg>
         </button>
         <p class="form-title">Оставьте свои данные, мы вам перезвоним</p>
-        <form action="#">
+        <form action="#" class="js-speaker-form">
           <div class="form-area">
             <label class="form-text" for="user-name">Имя</label>
             <div class="form-field">
               <svg class="form-icon" width="18" height="18">
                 <use href="images/icons.svg#icon-username"></use>
               </svg>
-              <input class="form-input" type="name" name="user-name" id="user-name" />
+              <input class="form-input" type="text" name="user-name" id="user-name" required />
             </div>
           </div>
           <div class="form-area">
@@ -471,7 +471,7 @@
               <svg class="form-icon" width="18" height="18">
                 <use href="images/icons.svg#icon-tel"></use>
               </svg>
-              <input class="form-input" type="tel" name="user-tel" id="user-tel" />
+              <input class="form-input" type="tel" name="user-tel" id="user-tel" required />
             </div>
           </div>
           <div class="form-area">
@@ -480,7 +480,7 @@
               <svg class="form-icon" width="18" height="18">
                 <use href="images/icons.svg#icon-email"></use>
               </svg>
-              <input class="form-input" type="email" name="user-email" id="user-email" />
+              <input class="form-input" type="email" name="user-email" id="user-email" required />
             </div>
           </div>
 
@@ -488,7 +488,6 @@
             <label class="form-text" for="user-text">Комментарий</label>
             <textarea
               class="form-comment"
-              type="text"
               name="user-text"
               id="user-text"
               placeholder="Введите текст"
@@ -496,7 +495,13 @@
           </div>
         </form>
         <label class="check">
-          <input class="check-input" type="checkbox" name="policity-check" value="policity" />
+          <input
+            class="check-input"
+            type="checkbox"
+            name="policity-check"
+            value="policity"
+            required
+          />
           <span class="check-icon"></span>
           <span class="check-text"
             >Соглашаюсь с рассылкой и принимаю
@@ -507,5 +512,14 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <!-- <script>
+      (() => {
+        document.querySelector('.js-speaker-form').addEventListener('submit', e => {
+          e.preventDefault();
+
+          new FormData(e.currentTarget).forEach((value, name) => console.log(`${name}: ${value}`));
+        });
+      })();
+    </script> -->
   </body>
 </html>
